@@ -1,6 +1,9 @@
 app = 'metrics-monitorer-staging'
 
 [build]
+  [build.args]
+    MB_EDITION = "oss"
+    VERSION = ""
 
 [[mounts]]
   source = 'metabase_data_staging'

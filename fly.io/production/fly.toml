@@ -1,6 +1,9 @@
 app = 'metrics-monitorer-production'
 
 [build]
+  [build.args]
+    MB_EDITION = "oss"
+    VERSION = ""
 
 [[mounts]]
   source = 'metabase_data'
