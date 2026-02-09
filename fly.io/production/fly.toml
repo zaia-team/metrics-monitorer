@@ -22,10 +22,10 @@ app = 'metrics-monitorer-production'
   processes = ['app']
 
 [[http_service.checks]]
-  grace_period = "120s"
+  grace_period = "600s"
   interval = "15s"
   method = "GET"
-  timeout = "5s"
+  timeout = "10s"
   path = "/api/health"
 
 [[vm]]
