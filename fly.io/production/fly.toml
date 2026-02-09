@@ -21,6 +21,14 @@ app = 'metrics-monitorer-production'
   min_machines_running = 1
   processes = ['app']
 
+  [http_service.checks]
+    [http_service.checks.alive]
+      grace_period = "120s"
+      interval = "15s"
+      method = "GET"
+      timeout = "5s"
+      path = "/api/health"
+
 [[vm]]
   memory = '2gb'
   cpu_kind = 'shared'
