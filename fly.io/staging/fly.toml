@@ -21,12 +21,14 @@ app = 'metrics-monitorer-staging'
   min_machines_running = 1
   processes = ['app']
 
-[[http_service.checks]]
-  grace_period = "300s"
-  interval = "30s"
-  method = "GET"
-  timeout = "10s"
-  path = "/api/health"
+# Healthcheck removido temporariamente para permitir primeira inicialização
+# Será reativado após aplicação estar funcionando
+# [[http_service.checks]]
+#   grace_period = "600s"
+#   interval = "30s"
+#   method = "GET"
+#   timeout = "10s"
+#   path = "/api/health"
 
 [[vm]]
   memory = '2gb'
