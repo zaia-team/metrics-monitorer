@@ -1,4 +1,4 @@
-app = 'metrics-monitorer-prod'
+app = 'zaia-metrics-monitorer-prod'
 
 [build]
   [build.args]
