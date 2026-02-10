@@ -58,8 +58,7 @@ jobs:
           flyctl deploy \
             --remote-only \
             --no-cache \
-            --config ./fly.io/staging/fly.toml \
-            -a metrics-monitorer-staging
+            --config ./fly.io/staging/fly.toml
 
       - name: Deploy to Production
         if: ${{ needs.setup.outputs.environment == 'Production' }}
@@ -69,8 +68,7 @@ jobs:
           flyctl deploy \
             --remote-only \
             --no-cache \
-            --config ./fly.io/production/fly.toml \
-            -a metrics-monitorer-production
+            --config ./fly.io/production/fly.toml
 
   notification:
     name: Notification
