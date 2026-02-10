@@ -1,4 +1,4 @@
-app = 'metrics-monitorer-production'
+app = 'metrics-monitorer-prod'
 
 [build]
   [build.args]
