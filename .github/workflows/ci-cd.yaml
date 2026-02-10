@@ -30,6 +30,8 @@ jobs:
             echo "environment=Production" >> $GITHUB_OUTPUT
           elif [ "${{ github.ref }}" = "refs/heads/release" ]; then
             echo "environment=Staging" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref }}" = "refs/heads/zaia-master" ]; then
+            echo "environment=Production" >> $GITHUB_OUTPUT
           else
             echo "environment=" >> $GITHUB_OUTPUT
           fi
