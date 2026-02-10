@@ -1,4 +1,4 @@
-app = 'metrics-monitorer-staging'
+app = 'z-metrics-monitorer-staging'
 
 [build]
   [build.args]

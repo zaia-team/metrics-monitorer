@@ -4,5 +4,10 @@
   "jake.autoDetect": "off",
   "gulp.autoDetect": "off",
   "npm.autoDetect": "off",
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": [
+    "metabase",
+    "monitorer",
+    "zaia"
+  ]
 }

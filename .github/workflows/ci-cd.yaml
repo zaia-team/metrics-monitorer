@@ -4,11 +4,11 @@ on:
   pull_request:
     branches:
       - release
-      - master
+      - zaia-master
   push:
     branches:
       - release
-      - master
+      - zaia-master
     tags:
       - 'v*.*.*'
 
@@ -30,6 +30,8 @@ jobs:
             echo "environment=Production" >> $GITHUB_OUTPUT
           elif [ "${{ github.ref }}" = "refs/heads/release" ]; then
             echo "environment=Staging" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref }}" = "refs/heads/zaia-master" ]; then
+            echo "environment=Production" >> $GITHUB_OUTPUT
           else
             echo "environment=" >> $GITHUB_OUTPUT
           fi
@@ -56,8 +58,7 @@ jobs:
           flyctl deploy \
             --remote-only \
             --no-cache \
-            --config ./fly.io/staging/fly.toml \
-            -a metrics-monitorer-staging
+            --config ./fly.io/staging/fly.toml
 
       - name: Deploy to Production
         if: ${{ needs.setup.outputs.environment == 'Production' }}
@@ -67,8 +68,7 @@ jobs:
           flyctl deploy \
             --remote-only \
             --no-cache \
-            --config ./fly.io/production/fly.toml \
-            -a metrics-monitorer-production
+            --config ./fly.io/production/fly.toml
 
   notification:
     name: Notification

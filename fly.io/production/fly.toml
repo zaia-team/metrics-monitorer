@@ -1,4 +1,4 @@
-app = 'metrics-monitorer-production'
+app = 'zaia-metrics-monitorer-prod'
 
 [build]
   [build.args]
@@ -21,12 +21,12 @@ app = 'metrics-monitorer-production'
   min_machines_running = 1
   processes = ['app']
 
-[[http_service.checks]]
-  grace_period = "600s"
-  interval = "15s"
-  method = "GET"
-  timeout = "10s"
-  path = "/api/health"
+# [[http_service.checks]]
+#   grace_period = "600s"
+#   interval = "15s"
+#   method = "GET"
+#   timeout = "10s"
+#   path = "/api/health"
 
 [[vm]]
   memory = '2gb'
